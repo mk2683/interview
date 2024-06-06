@@ -1,0 +1,16 @@
+
+function sort(str){
+    len = str.length;
+    for (let i = 0; i < len; i++) {
+        for (let j = i+1; j < len-1; j++) {
+            if (str[i] > str[j]) {
+                let temp = str[i];
+                str[i] = str[j];
+                str[j] = temp;
+            } 
+            
+        }
+        
+    }
+    return str;
+}

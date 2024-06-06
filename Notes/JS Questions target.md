@@ -1,0 +1,12 @@
+- clousure example
+- how can you remove clousure
+- var let Difference 
+- promise example 
+- callback hell example
+- Async await example
+- write ur own sort function for Object
+- use sort with comparator function
+- Inheritance example without classes
+- classes example in JS 
+- infinite currying
+- Memoization
