@@ -28,7 +28,7 @@ class Graph {
         const neighbors = this.adjList.get(vertex);
         for (const neighbor of neighbors) {
           if (!visited.has(neighbor)) {
-            queue.push(neighbor);
+            queue.push(neighbor); // For Tree add left, right
           }
         }
       }
@@ -113,3 +113,29 @@ g1.addEdge("C", "F");
 
 console.log("DFS (Iterative):");
 g1.dfsIterative("A");
+
+var connect = function (root) {
+  if (!root) return root;
+
+  if (root.left) {
+    root.left.next =
+      root.right || root.next ? root.next.left || root.next.right : null;
+  }
+
+  if (root.right) {
+    root.right.next = root.next
+      ? root.next.left
+        ? root.next.left
+        : root.next.right
+        ? root.next.right
+        : null
+      : null;
+  }
+
+  connect(root.left);
+  connect(root.right);
+
+  return root;
+};
+
+

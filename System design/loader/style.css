@@ -5,12 +5,12 @@
   flex-direction: column;
 }
 
-.parent {
+/* .parent {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   border: 1px solid red;
-}
+} */
 
 .child {
   height: 160px;
@@ -47,7 +47,6 @@
   --c: no-repeat linear-gradient(#000 0%, #888 100%);
   background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
   background-size: 20% 100%;
-  background: black, red, blue;
   animation: load 2s infinite linear;
 }
 @keyframes load {
