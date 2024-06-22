@@ -195,22 +195,6 @@ function search(searchText) {
   });
 }
 
-const debounce = (fn, delay) => {
-  let timer = null;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      fn(...args);
-    }, delay);
-  };
-};
-
-const debouncedSearch = debounce(search, 500);
-
-input.addEventListener("keyup", (e) => {
-  debouncedSearch(e.target.value);
-});
-
 function handlePageBtnClick(e) {
   const btn = e.target;
   if (btn.classList.contains("button")) {
@@ -221,6 +205,7 @@ function handlePageBtnClick(e) {
     debouncedSearch(input.value);
   }
 }
+
 function renderPaginationBtns(posts) {
   pageContainer.innerHTML = "";
 
@@ -238,6 +223,7 @@ function renderPaginationBtns(posts) {
   btnsWrapper.addEventListener("click", handlePageBtnClick);
   pageContainer.appendChild(btnsWrapper);
 }
+
 function renderPost(posts) {
   postContainer.innerHTML = "";
   const postFragment = document.createDocumentFragment();
@@ -276,6 +262,21 @@ function renderPost(posts) {
 
   postContainer.appendChild(postFragment);
 }
+
+const debounce = (fn, delay) => {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+};
+
+const debouncedSearch = debounce(search, 500);
+input.addEventListener("keyup", (e) => {
+  debouncedSearch(e.target.value);
+});
 
 renderPost(posts);
 renderPaginationBtns(posts);
