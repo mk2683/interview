@@ -1,0 +1,53 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.keypad-conatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.msg-container {
+  height: 5vmin;
+  width: 60vmin;
+  margin-top: 5rem;
+  border: 1px solid grey;
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: darkred;
+  border-radius: 10px;
+}
+
+.keypad {
+  width: 60vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.key-btns {
+  width: 15vmin;
+  height: 6vmin;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.key-btns:active {
+  background-color: azure;
+}
