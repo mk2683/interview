@@ -6,7 +6,6 @@ class Node {
     this.next = null;
   }
 }
-
 class LinkList {
   constructor() {
     this.head = null;
@@ -24,6 +23,19 @@ class LinkList {
     }
   }
 
+  reverse() {
+    let prev = null,
+      current = this.head,
+      next = null;
+    while (current) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    this.tail = this.head;
+    this.head = prev;
+  }
   delete(value) {
     let current = this.head,
       prev = null;
@@ -45,20 +57,6 @@ class LinkList {
       prev = current;
       current = current.next;
     }
-  }
-
-  reverse() {
-    let prev = null,
-      current = this.head,
-      next = null;
-    while (current) {
-      next = current.next;
-      current.next = prev;
-      prev = current;
-      current = next;
-    }
-    this.tail = this.head;
-    this.head = prev;
   }
 
   print() {

@@ -10,7 +10,7 @@ for (let i = 1; i < 10; i++) {
   setTimeout(function () {
     console.log(i);
   }, i * 1000);
-} // output - 1,2,3,4,5,6,7,8,9 // saves the context aswell
+} // output - 1,2,3,4,5,6,7,8,9 // let has block scope, so a new i is created for each iteration of the loop. This way, each callback captures the correct value of i.
 
 for (var i = 1; i < 10; i++) {
   (function (index) {
@@ -18,8 +18,7 @@ for (var i = 1; i < 10; i++) {
       console.log(index);
     }, index * 1000);
   })(i);
-} // output - 1,2,3,4,5,6,7,8,9 // saves the context from function argument
-
+} // output - 1,2,3,4,5,6,7,8,9 // The IIFE immediately captures the current value of i and creates a new scope for each iteration, ensuring that each callback logs the correct value.
 for (var index = 1; index < 10; index++) {
   function a(i) {
     setTimeout(function () {

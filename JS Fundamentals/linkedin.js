@@ -1,7 +1,6 @@
 const Foo = function(a) {
-  this.a = a
-  this.bar = function() {
-    return this.a;
+  bar = function() {
+    return a;
   }
   this.baz = function() {
     return this.a;
@@ -52,3 +51,21 @@ function abc() {}
 abc.toString()
 23.toString()
 console.log(String(function abc() {}))
+
+
+/// Ans
+// Save the original toString method
+const originalToString = Function.prototype.toString;
+
+// Override the toString method
+Function.prototype.toString = function() {
+    // Get the original function string
+    const originalString = originalToString.call(this);
+
+    // Modify the string as required
+    return 'start:' + originalString + ':end';
+};
+
+// Example usage
+const func = function x() { alert(1); };
+console.log(1 + func);

@@ -3,17 +3,14 @@ class Graph {
     this.vertices = vertices;
     this.adjList = new Map();
   }
-
   addVertex(v) {
     this.adjList.set(v, []);
   }
-
   addEdge(v, w) {
     this.adjList.get(v).push(w);
     this.adjList.get(w).push(v); // If the graph is undirected
   }
 
-  // Iterative BFS
   bfs(startingNode) {
     const visited = new Set();
     const queue = [startingNode];
@@ -35,8 +32,6 @@ class Graph {
     }
   }
 }
-
-// Example usage
 const g = new Graph(6);
 const vertices = ["A", "B", "C", "D", "E", "F"];
 
@@ -61,16 +56,13 @@ class Graph1 {
     this.vertices = vertices;
     this.adjList = new Map();
   }
-
   addVertex(v) {
     this.adjList.set(v, []);
   }
-
   addEdge(v, w) {
     this.adjList.get(v).push(w);
     this.adjList.get(w).push(v); // If the graph is undirected
   }
-
   // Iterative DFS using a stack
   dfsIterative(startingNode) {
     const visited = new Set();
@@ -93,8 +85,6 @@ class Graph1 {
     }
   }
 }
-
-// Example usage
 const g1 = new Graph1(6);
 const vertices1 = ["A", "B", "C", "D", "E", "F"];
 
@@ -137,5 +127,3 @@ var connect = function (root) {
 
   return root;
 };
-
-

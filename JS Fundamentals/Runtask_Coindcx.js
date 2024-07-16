@@ -3,7 +3,6 @@
 function createRunTask(concurrencyLimit) {
   let runningCount = 0;
   const queue = [];
-
   async function run() {
     if (runningCount >= concurrencyLimit) {
       return; // Reached the concurrency limit, wait for others to finish
@@ -15,7 +14,6 @@ function createRunTask(concurrencyLimit) {
 
     const promiseFunction = queue.shift();
     runningCount++;
-
     try {
       const result = await promiseFunction();
       console.log(result); // Output the result of the resolved promise
@@ -26,12 +24,10 @@ function createRunTask(concurrencyLimit) {
       run(); // Continue running tasks
     }
   }
-
   function push(promiseFunction) {
     queue.push(promiseFunction);
     run();
   }
-
   return { push };
 }
 
