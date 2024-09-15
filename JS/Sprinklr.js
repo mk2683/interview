@@ -50,7 +50,7 @@ function x() {
     let b = 20;
 
     function z() {
-      let c = 30;
+      c = 30; // declared as global variable, it can be accessed from anywhere, no scope
 
       console.log(a, b, c);
     }
@@ -68,15 +68,16 @@ function x() {
 const innerZ = x()();
 
 innerZ(); // 20 30 30
+console.log(c);
 
 ///////////////////////
 
-// const Obj = {
-//  KEY1: 'A',
-//  KEY2: 'B',
-//  KEY3: 'C',
-//  KEY4: 'D'
-// } as const
+const Obj = {
+ KEY1: 'A',
+ KEY2: 'B',
+ KEY3: 'C',
+ KEY4: 'D'
+} as const
 
 // Create a type that extracts the keys of this object as a union
 // Create a type that extracts the values of this object as a union
@@ -91,6 +92,10 @@ innerZ(); // 20 30 30
 // Type key : {...}
 // Type value : Obj.KEY1 | Obj.KEY2 | Obj.KEY3 | Obj.KEY4
 // Type Obj = {[Key: key] : [Value: value]}
+
+//Ans
+type Keys = keyof typeof Obj;
+type Values = typeof Obj[Keys];
 
 //Create a function memoizeOne that takes a function as an argument and memoizes it. That is, whenever the arguments passed to the memoized function are repeated in another invocation, the memoized function should return a cached result instead of executing again.
 

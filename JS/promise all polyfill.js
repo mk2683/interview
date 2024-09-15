@@ -7,7 +7,6 @@ const dummyAPI = (time) => {
         }, time)
     })
 }
-
 const taskAPIs = [dummyAPI(1000), dummyAPI(2000), dummyAPI(3000)];
 
 const promiseAll = (taskAPIs) => {
@@ -29,7 +28,6 @@ promiseAll(taskAPIs).then(data => {
 }).catch(err => {
     console.log(`error is ${err}`);
 })
-
 function abc() {
     console.log(this);
     const ab = () => {
