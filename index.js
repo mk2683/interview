@@ -1,34 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let currentIndex = 0;
-  const slides = document.querySelector(".slides");
-  const totalSlides = document.querySelectorAll(".slide").length;
-
-  function showSlide(index) {
-    if (index >= totalSlides) {
-      currentIndex = 0;
-    } else if (index < 0) {
-      currentIndex = totalSlides - 1;
-    } else {
-      currentIndex = index;
+console.log("Experiment");
+var twoSum = function (nums, target) {
+  const hash = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+    if (hash[diff] !== undefined) {
+      return [i, hash[diff]];
     }
-    slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+    hash[nums[i]] = i;
   }
-
-  function handleNavigation(event) {
-    const direction = event.target.getAttribute("data-direction");
-    if (direction === "next") {
-      showSlide(currentIndex + 1);
-    } else if (direction === "prev") {
-      showSlide(currentIndex - 1);
-    }
-  }
-
-  document.querySelectorAll(".nav").forEach((button) => {
-    button.addEventListener("click", handleNavigation);
-  });
-
-  // Auto slide every 3 seconds
-  //   setInterval(() => {
-  //     showSlide(currentIndex + 1);
-  //   }, 3000);
-});
+};
+console.log(twoSum([2, 7, 11, 15], 9));
