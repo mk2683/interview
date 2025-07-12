@@ -103,4 +103,3 @@ Array.prototype.myMap = function(callback){
   4   5   6
 
   // 452631
-
