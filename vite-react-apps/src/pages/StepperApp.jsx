@@ -1,5 +1,5 @@
 import React from "react";
-import Stepper from "./components/Stepper";
+import Stepper from "../components/Stepper/Stepper";
 
 function Customer() {
   return (
@@ -50,6 +50,6 @@ const data = [
   },
 ];
 
-export default function App() {
+export default function StepperApp() {
   return <Stepper data={data} />;
 }
