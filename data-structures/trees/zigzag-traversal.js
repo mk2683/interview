@@ -1,4 +1,4 @@
-/* Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. 
+/* Given the root of a binary tree, return the zigzag level order traversal of its nodes' values.
 (i.e., from left to right, then right to left for the next level and alternate between).
 Example 1:
 Input: root = [3,9,20,null,null,15,7]
@@ -32,9 +32,9 @@ var zigzagLevelOrder = function(root) {
     }
 
     traverse(root, 0);
-    
+
     return results.map((b, i) => i % 2 ? b.reverse() : b );
-    
+
 };
 
 const result = zigzagLevelOrder([3,9,20,null,null,15,7]);

@@ -41,13 +41,13 @@ class LinkList {
 
         if(currNode){
             if (condition) {
-                
+
             }
             currNode.next = currNode.next.next;
         }
 
 
-        
+
     }
 
 }

@@ -7,10 +7,10 @@ function sort(str){
                 let temp = str[i];
                 str[i] = str[j];
                 str[j] = temp;
-            } 
-            
+            }
+
         }
-        
+
     }
     return str;
 }

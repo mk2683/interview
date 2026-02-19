@@ -200,7 +200,7 @@ function outerFunc() {
   {let outerVar = 'I am outside!';} // => Add a block statement"
 
   function innerFunc() {
-    console.log(outerVar); 
+    console.log(outerVar);
   }
 
 return innerFunc;
@@ -283,7 +283,7 @@ function largestUniqueString(input){
         if (isUniqueString) {
             maxString = (element.length > maxString.length) ? element : maxString;
             console.log("unique string", maxString);
-        } 
+        }
     });
     return maxString;
 }
@@ -306,8 +306,8 @@ function mergeArray(array1, array2){
         } else {
             newArray.push(array2[iterator2]);
             iterator2++;
-        } 
-        
+        }
+
     }
 
     return newArray;
@@ -327,7 +327,7 @@ let input = [{x: 7, y:[1, 2, 4]}, {x: 19, y: [9 ,5,2]}]
 
 function flattenInput(input){
 let res = [];
-  input.forEach(element => { 
+  input.forEach(element => {
     if( element.x !== undefined){
       res.push(element.x)
     }
@@ -357,7 +357,7 @@ function modifyArray(input){
   }
 
   for (let i = 0; i < input.length; i++) {
-    
+
   }
 }
 
